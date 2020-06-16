@@ -1,0 +1,27 @@
+#include <stdio.h>
+int sumarray(int a[],int size);
+
+
+int main()
+{
+    int array[10]={10,20,30,40,50,60,70},size,sum=0;
+    
+    size=sizeof(array)/sizeof(array[0]);
+    
+    sum=sumarray(array,size);
+    
+    printf("%d",sum);
+
+    return 0;
+}
+
+int sumarray(int a[],int size)
+{
+    
+    if(size==0)
+    {
+        return 0;
+    }
+    
+    return a[size-1]+sumarray(a,size-1);
+}
