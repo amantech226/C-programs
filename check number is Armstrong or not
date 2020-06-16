@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include<math.h>
+int countdigi(int num);
+int findArm(int num,int count);
+
+int main()
+{
+    int num,count=0,result=0;
+    
+    printf("Enter the number :- ");
+    scanf("%d",&num);
+    
+    count=countdigi(num);
+    result=findArm(num,count);
+    
+    if(result==num)
+    {
+    printf("This is a Armstrong number");
+    }
+    
+    else
+    {
+        printf("This is not a Armstrong number");
+    }
+
+    return 0;
+}
+
+int countdigi(int num)
+{
+    int count=0;
+    while(num!=0)
+    {
+        count++;
+        num/=10;
+    }
+    
+    return count;
+    
+}
+
+int findArm(int num,int count)
+{
+    int split_digit=0,sum=0,i=1;
+    
+    
+    while(num!=0)
+    {
+        split_digit=num%10;
+        sum=sum+pow(split_digit,count);
+        num/=10;
+    }
+    
+    return sum;
+    
+}
