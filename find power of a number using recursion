@@ -1,0 +1,26 @@
+#include <stdio.h>
+int findPower(int num,int power);
+
+int main()
+{
+    int num=5,power=3,answer=0;
+    
+    answer=findPower(num,power);
+    
+    printf("%d",answer);
+    return 0;
+}
+
+int findPower(int num,int power)
+{
+    if(power==0)
+    {
+        return 1;
+    }
+    
+    else
+    {
+        return num *findPower(num,power-1);
+    }
+    
+}
