@@ -5,7 +5,7 @@ int main()
 {
     int num,times=1;
     
-    printf("Enter the number");
+    printf("Enter the number:- ");
     scanf("%d",num);
     
     table(num,times);
