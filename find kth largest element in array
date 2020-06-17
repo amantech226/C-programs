@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int a[]={22,56,89,56,95,12,46,48,45},i=0,j=0,temp=0,num;
+    
+    printf("Enter the number:- ");
+    scanf("%d",&num);
+    
+    for(i=0;i<9;i++)
+    {
+        for(j=i+1;j<9;j++)
+        {
+           if(a[i]<a[j])
+           {
+               temp=a[i];
+               a[i]=a[j];
+               a[j]=temp;
+           }
+            
+        }
+        
+        if(i==num-1)
+        {
+            printf("Kth largest element is :- %d\n",a[i]);
+            break;
+        }
+        
+    }
+}
