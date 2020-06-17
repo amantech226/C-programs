@@ -20,15 +20,8 @@ int main()
   {
       scanf("%d",(ptr+i));
   }
-  
-  ptr =(int *)realloc(ptr,2*sizeof(int));
-  
-  for(i=4;i<6;i++)
-  {
-      scanf("%d",(ptr+i));
-  }
    
-  for(i=0;i<6;i++)
+  for(i=0;i<num;i++)
   {
       sum=sum+*(ptr+i);
       
