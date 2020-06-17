@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include  <stdlib.h>
+
+int main()
+{
+   int num,*ptr,i=0,sum=0;
+   
+   printf("Enter the Size :- ");
+   scanf("%d",&num);
+   
+   
+   ptr=(int *)malloc(num*sizeof(int));
+   
+  if(ptr==NULL)
+  {
+      printf("pointer is not point to the any location");
+  }
+  
+  for(i=0;i<num;i++)
+  {
+      scanf("%d",(ptr+i));
+  }
+  
+  ptr =(int *)realloc(ptr,2*sizeof(int));
+  
+  for(i=4;i<6;i++)
+  {
+      scanf("%d",(ptr+i));
+  }
+   
+  for(i=0;i<6;i++)
+  {
+      sum=sum+*(ptr+i);
+      
+  }
+  
+  printf("\n\nSum of Elements :- %d",sum);
+  
+  free(ptr);
+  
+  ptr=NULL;
+  
+  if(ptr==NULL)
+  {
+      printf("\nNow Memory is released");
+  }
+
+    return 0;
+}
